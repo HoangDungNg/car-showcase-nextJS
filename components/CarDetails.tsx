@@ -4,7 +4,6 @@ import React, { Fragment } from 'react';
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
 import { generateCarImageUrl } from '@utils';
-import { url } from 'inspector';
 
 interface ICarDetails {
   isOpen?: boolean;

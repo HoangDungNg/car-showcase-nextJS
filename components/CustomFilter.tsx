@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Listbox, Transition } from '@headlessui/react';
@@ -17,7 +17,7 @@ interface ICustomFilter {
 
 const CustomFilter: React.FC<ICustomFilter> = ({ title, options }) => {
   const router = useRouter();
-  const [selected, setSelected] = React.useState(options[0]);
+  const [selected, setSelected] = useState(options[0]);
 
   const handleUpdateParams = (e: { title: string; value: string }) => {
     const newPathName = updateSearchParams(title, e.value.toLowerCase());

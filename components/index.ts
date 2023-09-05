@@ -8,3 +8,5 @@ export { default as SearchManufacturer } from './SearchManufacturer';
 export { default as CarCard } from './CarCard';
 export { default as CarDetails } from './CarDetails';
 export { default as ShowMore } from './ShowMore';
+export { default as MainProvider } from './MainProvider';
+export { default as MainLayout } from './MainLayout';

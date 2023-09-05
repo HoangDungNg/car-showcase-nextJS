@@ -1,6 +1,7 @@
 import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from '@components';
 import { fuels, yearsOfProduction } from '@constant';
 import { fetchCars } from '@utils';
+// import { Client, Server } from 'react-hydration-provider';
 
 export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
@@ -14,7 +15,7 @@ export default async function Home({ searchParams }) {
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden" suppressHydrationWarning>
       <Hero />
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">

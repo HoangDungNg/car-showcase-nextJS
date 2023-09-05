@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { SearchManufacturer } from '.';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -17,8 +17,8 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 );
 
 const SearchBar = () => {
-  const [manufacturer, setManufacturer] = React.useState('');
-  const [model, setModel] = React.useState('');
+  const [manufacturer, setManufacturer] = useState('');
+  const [model, setModel] = useState('');
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -52,6 +52,7 @@ const SearchBar = () => {
 
     router.push(newPathName, { scroll: false });
   };
+
   return (
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">

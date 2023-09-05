@@ -16,8 +16,9 @@ const CarCard: React.FC<ICarCard> = ({ car }) => {
   const [isOpen, setisOpen] = useState(false);
 
   const carRent = calculateCarRent(city_mpg, year);
+
   return (
-    <div className="car-card group">
+    <div className="car-card group" suppressHydrationWarning>
       <div className="car-card__content">
         <h2 className="car-card__content-title">
           {make} {model}
@@ -36,6 +37,7 @@ const CarCard: React.FC<ICarCard> = ({ car }) => {
           alt="car model"
           fill
           priority
+          sizes="auto"
           className="object-contain"
         />
       </div>
