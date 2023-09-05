@@ -34,7 +34,6 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 };
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
-  // hrjavascript-mastery
   const url = new URL('https://cdn.imagin.studio/getimage');
   const { make, year, model } = car;
   url.searchParams.append('customer', 'hrjavascript-mastery');
@@ -46,4 +45,14 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   url.searchParams.append('angle', `${angle}`);
 
   return `${url}`;
+};
+
+export const updateSearchParams = (type: string, value: string) => {
+  const searchParams = new URLSearchParams(window.location.search);
+
+  searchParams.set(type, value);
+
+  const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathName;
 };
